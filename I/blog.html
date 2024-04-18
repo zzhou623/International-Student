@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Welcome to International Student Family</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(25deg, #33539E, #b0cce8, #ffb3ba, #FFE1E4);
+            text-align:center;
+        
+        }
+    h2 {
+        font-size: 3em;
+        color: black;
+        font-family: "Playfair Display", serif;
+
+    }
+    .story-container {
+            width: 80%;
+            max-width: 40%;
+            margin: 10px auto;
+            border: 2px solid #ccc;
+            padding: 20px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position:relative;
+        }
+        .hidden {
+            display: none;
+        }
+    #message1 {
+            padding: 8px;
+            width: 72%;
+            color: black;
+            background-color: #fff;
+        }
+    #message2 {
+            padding: 2px;
+            width: 80%;
+            color: black;
+            background-color: #fff;
+        font-size: 2.1em;
+        }
+p{
+     font-family: "Playfair Display", serif;
+}
+.btn-container {
+            margin-top: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            border: 2px solid #333;
+            background-color: #f9f9f9;
+        }
+        .prev-btn {
+            float: left;
+        }
+        .next-btn {
+            float: right;
+        }
+    #nextBtn{
+    background: rgb(221, 154, 235);
+    padding: 0.5rem 2rem;
+    outline: none;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+     position: absolute; 
+    top: 85%; 
+    left: 80%;
+    transform: translate(-50%, -50%);
+}
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo"> International Student </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="home-content">
+            <h1>Blog and Message</h1>
+            <br>
+            <br>
+            <p>Studying abroad not only enriches your personal experiences and fosters comprehensive development but also cultivates your independence and language skills. Through overseas education, you will have more opportunities for diverse choices, enhance the quality of your education, and increase your competitiveness in the job market. Having a background in international education is also a factor that companies value, laying a solid foundation for your career development.</p>
+        </div>
+        <br>
+        <br>
+        <br>
+        <main style="display: flex; justify-content: space-between;">
+         <div class="story-container" id="story1">
+     <h2>Lewis <br> Country: Russia</h2>
+       <img src="Images/8.png" alt="Image 1" style="width: 80%; height: auto;">
+       <p id="message2">I am so glad that I insisted on taking the path of studying in the United States when I first came here, so that I could discover the many more possibilities that exist in this world. After coming to the U.S., I have met different people from all over the world and listened to their stories about their lives. They told me about their lives and how the differences between cultures are really big, and how they don't have to worry about wars, don't have to be anxious about not being able to eat, and how they value their lives more. I saw a lot of beautiful scenery, the world is too beautiful to live a more meaningful life.</p>
+    </div>
+         
+    <div class="story-container hidden" id="story2">
+        <h2>Ensia <br> Country: China</h2>
+        <img src="Images/7.png" alt="Image 2" style="width: 72%; height: auto;">
+        <p id="message2">Our first birth occurs when we are born into a particular culture, shaping our established ways of seeing the world. Studying abroad, on the other hand, is like our second birth, occurring when we leave the familiarity of our home country and set foot in an unfamiliar foreign land. This is when we find that all common sense is broken and new languages, habits and cultural logics are being formed. It is as if we become a new person, adopted. As we look back and recount our birthplace with this new perspective and language, it is a stage that every anthropologist should go through.</p>
+    </div>
+       <div class="story-container hidden" id="story3">
+        <h2>Angela <br> Country: China</h2>
+        <img src="Images/12.png" alt="Image 3" ">
+        <p id="message1">"The point of studying abroad and being a international student is not what you learn or what you understand, but what you experience."</p>
+            </div>
+     <div class="story-container hidden" id="story4">
+     <h2>Vedanti <br> Country: New Zealand</h2>
+       <img src="Images/10.png" alt="Image 4" style="width: 72%; height: auto;">
+       <p id="message2">After studying abroad and living in the United States for two years, I began to accept my imperfections openly, and no one is absolutely perfect. When I go abroad, I will meet more people who are better than me, and talking with them can always help me learn a lot of things. I don't feel anxious, on the contrary, I have become more open.</p>
+     </div>
+    <div class="btn-container">
+        <button class="btn next-btn" id="nextBtn">Next</button>
+    </div>
+    
+</main>
+
+    </div>  
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script>
+     gsap.from('h1', 1.2, {opacity:0, y:-80, delay:0.45})
+    gsap.from('#message', 1.2, {opacity:0, y:-80, delay:1.3})
+   
+  let currentStoryIndex = 1;
+        const stories = document.querySelectorAll('.story-container');
+        const nextBtns = document.querySelectorAll('.next-btn');
+
+        nextBtns.forEach(btn => btn.addEventListener('click', showNextStory));
+
+        
+        function showNextStory() {
+            stories[currentStoryIndex - 1].classList.add('hidden');
+            currentStoryIndex = (currentStoryIndex % stories.length) + 1;
+            stories[currentStoryIndex - 1].classList.remove('hidden');
+        }
+    </script>
+</body>
+
+</html>

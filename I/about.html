@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Welcome to International Student Family</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(25deg, #33539E, #b0cce8, #ffb3ba, #FFE1E4);
+        }
+        #textDisplay{
+            font-size: 3rem;
+            font-family: "Playfair Display", serif;
+        }
+
+    </style>
+    </head>
+    <body>
+    <header>
+        <div class="logo">
+            International Student
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="home">
+        <div class="home-content">
+            <h1>Get to know more!</h1>
+            <br>
+            <br>
+            <p>We believe that studying abroad is not just about academics; it's a transformative journey that opens doors to new cultures, perspectives, and opportunities. 
+Join us in exploring the world of international education and unlocking the possibilities that studying abroad has to offer. We look forward to being part of your study abroad success story!</p>
+        </div>
+        <br> 
+        <br> 
+        <button id="showTextButton">10 Tips to know for International Student</button>
+        <br> 
+        <br> 
+        <br> 
+        <br> 
+    <p id="textDisplay"></p>
+   
+<script>
+        var textArray = [
+            "Tip 1: Develop Your Language Skills",
+            "Tip 2: Before you go abroad, do a full body checkup, treat small illnesses and pains before you go out, and remember to see your dentist and get glasses",
+            "Tip 3: Living expenses really depend on your family's situation, and there are bug differences amoung international students, so don't follow the trend or compare yourself with others!",
+            "Tip 4: Develop the habit of using e-mail, check your mailbox every day, set up push notifications, miss the mailbox may be a big mistake!",
+            "Tip 5: Be sure to explore your interests by joining a society or club—clubs can help you explore your interests and learn new things outside of the classroom.",
+            "Tip 6: A great way to build new support networks and learn how to survive as a student abroad is to get involved in the social aspects of campus life.",
+            "Tip 7: Give yourself a clear goal, whether you want to study abroad or immigrate.",
+            "Tip 8: Always stay curious and ask questions.",
+            "Tip 9: Stay organized and manage your time effectively.",
+            "Tip 10:  Seek support and guidance from advisors and mentors.",
+        ];
+
+        var currentIndex = 0;
+        var showTextButton = document.getElementById("showTextButton");
+        var textDisplay = document.getElementById("textDisplay");
+
+        showTextButton.addEventListener("click", function () {
+            textDisplay.textContent = textArray[currentIndex];
+            currentIndex = (currentIndex + 1) % textArray.length;
+        });
+    </script>
+    </body>
+        </html>
