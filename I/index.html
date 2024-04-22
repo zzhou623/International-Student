@@ -1,49 +1,156 @@
 <!DOCTYPE html>
 <html>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
 <head lang="en">
     <meta charset="UTF-8">
     <title>Welcome to International Student Family</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
-        * {
+       * {
             padding: 0;
             margin: 0;
         }
 
-        body {
-            width: 100%;
-            height: 100%;
-            background-image: linear-gradient(25deg, #33539E, #b0cce8, #ffb3ba, #FFE1E4);
-            text-align:center;
+        #react {
+            width: 400px;
+            height: 400px;
+            margin: 400px auto;
+            transform-style: preserve-3d;
+            animation: rotate 20s infinite;
+            animation-timing-function: linear;
+        }
+
+        #react div {
+            position: absolute;
+            transition: all .4s;
+        }
+
+        div .out_pic {
+            width: 400px;
+            height: 400px;
+            opacity: 0.9;
+        }
+
+        div .in_pic {
+            width: 200px;
+            height: 200px;
+        }
+
+        #react span {
+            display: block;
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            top: 50px;
+            left: 50px;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+
+            to {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+
+        .out_front {
+            transform: translateZ(200px);
+        }
+
+        .out_back {
+            transform: translateZ(-200px);
+        }
+
+        .out_left {
+            transform: rotateY(90deg) translateZ(200px);
+        }
+
+        .out_right {
+            transform: rotateY(-90deg) translateZ(200px);
+        }
+
+        .out_top {
+            transform: rotateX(90deg) translateZ(200px);
+        }
+
+        .out_bottom {
+            transform: rotateX(-90deg) translateZ(200px);
+        }
+
+        .in_front {
+            transform: translateZ(50px);
+        }
+
+        .in_back {
+            transform: translateZ(-50px);
+        }
+
+        .in_left {
+            transform: rotateY(90deg) translateZ(50px);
+        }
+
+        .in_right {
+            transform: rotateY(-90deg) translateZ(50px);
+        }
+
+        .in_top {
+            transform: rotateX(90deg) translateZ(50px);
+        }
+
+        .in_bottom {
+            transform: rotateX(-90deg) translateZ(50px);
+        }
         
+        #react:hover .out_front {
+            transform: translateZ(400px);
         }
-        .chart-container {
-        width: 100%; 
-        max-width: 800px; 
-        text-align: center;
+
+        #react:hover .out_back {
+            transform: translateZ(-400px);
         }
-        h2{
-            font-size: 2.2rem;
-            font-family: "Playfair Display", serif;
-            color: black;
+
+        #react:hover .out_left {
+            transform: rotateY(90deg) translateZ(400px);
         }
-        main{
-             width: 80%;
-            max-width: 50%;
-            margin: 10px auto;
-            border: 2px solid #ccc;
-            padding: 20px;
-            background-color: #f9f9f9;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            position:relative;
+
+        #react:hover .out_right {
+            transform: rotateY(-90deg) translateZ(400px);
         }
-        #message1{
-            color: black;
-            font-family: "Playfair Display", serif;
-            font-size: 2rem;
+
+        #react:hover .out_top {
+            transform: rotateX(90deg) translateZ(400px);
+        }
+
+        #react:hover .out_bottom {
+            transform: rotateX(-90deg) translateZ(400px);
+        }
+
+        #react:hover .in_front {
+            transform: translateZ(200px);
+        }
+
+        #react:hover .in_back {
+            transform: translateZ(-200px);
+        }
+
+        #react:hover .in_left {
+            transform: rotateY(90deg) translateZ(200px);
+        }
+
+        #react:hover .in_right {
+            transform: rotateY(-90deg) translateZ(200px);
+        }
+
+        #react:hover .in_top {
+            transform: rotateX(90deg) translateZ(200px);
+        }
+
+        #react:hover .in_bottom {
+            transform: rotateX(-90deg) translateZ(200px);
         }
 
 
@@ -52,66 +159,104 @@
 
 <body>
     <header>
-        <div class="logo"> International Student </div>
+        <div class="logo">
+            International Student
+        </div>
         <nav>
             <ul class="menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="blog.html">Blog</a></li>
-               
             </ul>
+
         </nav>
     </header>
+    
     <section class="home">
         <div class="home-content">
-            <h1>More about International Students <br>in the United States</h1>
-            <br>
-             <br>
-              <br>
-            <p>Explore the vibrant tapestry of international student populations across various states in the United States on our webpage. Discover the diverse communities of students from around the world who contribute to the rich cultural fabric of states such as California, New York, Texas, and more. Gain insights into the top destinations for international students, their educational pursuits, and the dynamic impact they have on local communities. From bustling urban centers to serene college towns, uncover the unique experiences and opportunities that await international students in different states across the U.S.</p>
+            <h1>Welcome to the <br>International Student <br>Family</h1>
+            <p>We are a website dedicated to helping students interested in studying abroad learn about studying and living in the United States. Whether you want to learn about academic environments, cultural differences, or life experiences, we aim to provide you with valuable information and resources through our website.</p>
+       
+  <br>
+  <br>
+     <br>
+
+        <p>Our goal is to support you throughout your study abroad journey. We cover various topics including:</p>
+        <ul>
+            <li>- U.S. culture and lifestyle</li>
+            <li>- Academic life and social activities</li>
+            <li>- Life skills and practical advice</li>
+        </ul>
+        <br> 
+        <br>
+        <p>Additionally, we feature inspiring stories and encouragement from students who have studied abroad. Let us be your guide to realizing your study abroad dreams!</p>
+        <button onclick="location.href='learn.html'">Learn More</button>
+    </div>
+   
+   
+    <div id="react">
+        <div class="out_front">
+            <img src="Images/2.png" class="out_pic">
         </div>
-        <p>Chart Below:</p>
-         <div style="display: flex; justify-content: center;">
-        <canvas id="myChart" style="width: 100%; max-width: 1200px;"></canvas>
+        <div class="out_back">
+            <img src="Images/14.png" class="out_pic">
+        </div>
+        <div class="out_left">
+            <img src="Images/6.png" class="out_pic">
+        </div>
+        <div class="out_right">
+            <img src="Images/5.png" class="out_pic">
+        </div>
+        <div class="out_top">
+            <img src="Images/12.png" class="out_pic">
+        </div>
+        <div class="out_bottom">
+            <img src="Images/3.png" class="out_pic">
+        </div>
+        <span class="in_front">
+            <img src="Images/4.png" class="in_pic">
+        </span>
+        <span class="in_back">
+            <img src="Images/7.png" class="in_pic">
+        </span>
+        <span class="in_left">
+            <img src="Images/8.png" class="in_pic">
+        </span>
+        <span class="in_right">
+            <img src="Images/9.png" class="in_pic">
+        </span>
+        <span class="in_top">
+            <img src="Images/10.png" class="in_pic">
+        </span>
+        <span class="in_bottom">
+            <img src="Images/11.png" class="in_pic">
+        </span>
     </div>
-    <div>
-        <main style="display: flex; justify-content: space-between;">
-    <article style="width: 100%;">
-        <h2>Philadelphia</h2>
-        <img src="Images/6.png" alt="Image 1" style="width: 72%; height: auto;">
-        <p id="message1">Coming to the United States was a decision I made out of my pursuit of quality education and broadening my horizons. Penn’s renowned academic excellence fueled my dream of attending Penn. One of the most memorable experiences and challenges I faced was overcoming the language barrier. However, I was lucky enough to have supportive roommates who were enthusiastic about helping me learn English, which made a big difference. I'm so impressed with the hospitality of everyone here. Despite the initial language difficulties, immersing myself in reading books and watching American television shows greatly improved my English. Building friendships through activities like basketball and joining clubs can be beneficial. These connections enriched my experience and made me feel more at home. I recommend those international students to come to the United States because it is an easy way to grow academically and to develop meaningful friendships. Here you can express yourself boldly.
-</p>
-    </article>
-        </main>
-    </div>
-        <script>
-            const xValues = ["California", "New York", "Texas", "Masssachusetts", "Illinois", "Pennsylvania", "Florida", "Ohio", "Michigan", "Arizona"];
-            const yValues = [138393, 126782, 80757, 79751, 55337, 48593, 42590, 34204, 33501, 30054];
-            const barColors = "blue";
-            new Chart("myChart", {
-                type: "horizontalBar",
-                data: {
-                    labels: xValues,
-                    datasets: [{
-                        backgroundColor: barColors,
-                        data: yValues
-                    }]
-                },
-                options: {
-                    legend: {
-                        display: false
-                    },
-                    title: {
-                        display: true,
-                        text: "Data for  numbers of international students in the U.S. states",
-                        fontColor: "black"
-            
-                    }
-                    
-                   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script>
+     document.addEventListener('DOMContentLoaded', function () {
+            const cube = document.getElementById('cube');
+
+            window.addEventListener('scroll', function () {
+                const scrollPosition = window.scrollY;
+
+                
+                const openThreshold = 400; 
+
+                if (scrollPosition > openThreshold) {
+                    cube.classList.add('open-cube');
+                } else {
+                    cube.classList.remove('open-cube');
                 }
             });
-        </script>
+        });
+
+    gsap.from('h1', 1.2, {opacity:0, y:-80, delay:0.45})
+    gsap.from('p', 1.2, {opacity:0, y:-80, delay:1.3})
+     gsap.from('ul', 1.2, {opacity:0, y:-80, delay:1.3})
+    gsap.from('button', 1.2, {opacity:0, y:-80, delay:2.6})
+
+</script>
 </body>
 
 </html>
