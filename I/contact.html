@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Welcome to International Student Family</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(25deg, #33539E, #b0cce8, #ffb3ba, #FFE1E4);
+            text-align:center;
+        
+        }
+        .chart-container {
+        width: 100%; 
+        max-width: 800px; 
+        text-align: center;
+        }
+        h2{
+            font-size: 2.2rem;
+            font-family: "Playfair Display", serif;
+            color: black;
+        }
+        main{
+             width: 80%;
+            max-width: 50%;
+            margin: 10px auto;
+            border: 2px solid #ccc;
+            padding: 20px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position:relative;
+        }
+        #message1{
+            color: black;
+            font-family: "Playfair Display", serif;
+            font-size: 80%;
+        }
+        .container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+input,
+textarea {
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 8px 15px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#successMessage {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  border-radius: 3px;
+}
+
+.image-container {
+      max-width: 600px;
+      margin: 50px auto;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      text-align: center;
+    }
+    
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="image-container">
+    <h1>Join Our Family</h1>
+    <p>We are pleased to extend a warm invitation to all international students looking for a home. Our community values diversity, inclusion, and the unique experiences each person brings to the table. Whether you are pursuing academic dreams, exploring a new culture, or seeking to connect with like-minded people, we invite you to join our family. Share your story, celebrate your journey, and let's create unforgettable memories together. Together we can create a vibrant and supportive environment where every voice is heard and valued. Join us and be part of a special event!</p>
+    <img src="Images/13.png" alt="Image Placeholder">
+  </div>
+   <div class="container">
+    <h1>Contact Us</h1>
+    <form id="contactForm" action="process_form.php" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="story">Your Story:</label>
+      <textarea id="story" name="story" rows="5" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="successMessage" style="display: none;">
+      <p>Your story has been submitted successfully!</p>
+    </div>
+  </div>
+        <script>
+ document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const formData = new FormData(event.target);
+  const name = formData.get('name');
+  const email = formData.get('email');
+  const story = formData.get('story');
+
+  /
+  console.log(`Name: ${name}`);
+  console.log(`Email: ${email}`);
+  console.log(`Story: ${story}`);
+
+
+  document.getElementById('successMessage').style.display = 'block';
+
+  event.target.reset();
+});
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $story = $_POST["story"];
+
+    $file = fopen("user_stories.txt", "a");
+    fwrite($file, "Name: $name\nEmail: $email\nStory: $story\n\n");
+    fclose($file);
+
+    http_response_code(200); 
+} else {
+    
+    http_response_code(400); 
+}
+?>
+
+        </script>
+</body>
+
+</html>
+
